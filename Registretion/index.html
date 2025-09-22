@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <div class="background">
+    <div class="triangle">
+  <div class="header">
+    <img src="msbte.png" alt="MSBTE Logo" class="logo"/>
+    <div class="heading">
+      <h1>Maharashtra State Board of Technical Education</h1>
+      <h2>महाराष्ट्र राज्य तंत्र शिक्षण मंडळ</h2>
+    </div>
+  </div> 
+</div>  
+<div class="content">
+  <div class="container">
+    <div class="slider">
+      <div class="slider-track">
+        <img class="pic" src="./k1.jpg" alt="">
+      </div>
+      <div class="slider-track">
+        <img class="pic" src="./k2.jpg" alt="">
+      </div>
+      <div class="slider-track">
+        <img class="pic" src="./k3.jpg" alt="">
+      </div>
+      <div class="slider-track">
+        <img class="pic" src="./k4.png" alt="">
+      </div>
+      <div class="slider-track">
+        <img class="pic" src="./k5.png" alt="">
+      </div>
+      <div class="slider-track">
+        <img class="pic" src="./k6.jpg" alt="">
+      </div>
+      <div class="slider-track">
+        <img class="pic" src="./k7.jpg" alt="">
+      </div>
+      <div class="slider-track">
+        <img class="pic" src="./k8.jpg" alt="">
+      </div>
+    </div>          
+  </div>
+  <form id="registration-form">
+    <div class="box-row">
+      <div class="color-box">
+        <input type="text" name="data[Name]" placeholder="Enter your name" id="fname" class="inp" required />
+      </div>
+      <div class="color-box">
+        <input type="tel" name="data[Phone Number]" placeholder="Enter your ph.No" id="phone" class="inp" pattern="[0-9]{10}" required />
+      </div>
+      <div class="color-box">
+        <input type="text" name="data[Address]" placeholder="Enter your address" id="address" class="inp" required />
+      </div>
+      <div class="color-box">
+        <input type="text" name="data[Admission Date]" onfocus="(this.type='date')" placeholder="select date" id="date" class="inp" required />
+      </div>
+      <div class="color-box">
+        <select name="data[Course]" id="course" class="inp" required>
+          <option value="">--Course--</option>
+          <option>MS-CIT</option>
+          <option>Tally</option>
+          <option>Eng. Typing 30</option>
+          <option>Mar. Typing 30</option>
+          <option>Eng. Typing 40</option>
+          <option>Mar. Typing 40</option>
+        </select>
+      </div>
+      <div class="color-box">
+        <select name="data[Payment]" id="payment" class="inp" required>
+              <option value="">--Payment--</option>
+              <option>Online</option>
+              <option>Cash</option>
+            </select>
+          </div>
+          <div class="color-box">
+            <select name="data[Type]" id="type" class="inp" required>
+              <option value="">--Type--</option>
+              <option>Manage</option>
+              <option>Regular</option>
+            </select>
+          </div>
+        </div>
+        <input type="submit" value="Add" id="btn">
+      </form>
+
+      <p id="msg"></p>
+      <div class="chat-buttons">
+        <a href="https://wa.me/1234567890" target="_blank" class="chat-icon whatsapp" title="Chat on WhatsApp">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.linkedin.com/in/vedant-benure-419a33369/" target="_blank" class="chat-icon linkedin" title="Connect on LinkedIn">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/@v3dant_official/" target="_blank" class="chat-icon instagram" title="Visit Instagram">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+        </a>
+      </div>
+        <div class="carousel-container">
+          <img id="slide" src="" alt="Carousel Image">
+        </div>
+      <footer>
+        <p style="text-align: center;">© 2025 VedzVerse. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+  <script>
+    const imgArray = [
+    "./m1.jpg",
+    "./m2.jpg",
+    "./m3.jpg",
+    "./m4.jpg",
+    "./m5.jpg",
+    "./m6.jpg",
+    "./m7.jpg"
+];
+imgArray.forEach(img => {
+    const imgElement = new Image();
+    imgElement.src = img;
+});
+let currentIndex = 0;
+const slide = document.getElementById('slide');
+
+function showImage() {
+    slide.src = imgArray[currentIndex];
+    slide.alt = `Image ${currentIndex + 1}`;
+}
+function nextImage() {
+    currentIndex = (currentIndex + 1) % imgArray.length;
+    showImage();
+}
+function prevImage() {
+    currentIndex = (currentIndex - 1 + imgArray.length) % imgArray.length;
+    showImage();
+}
+window.onload = showImage;
+setInterval(() => {
+    nextImage();
+}, 3000);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
