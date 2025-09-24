@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   
   <div class="background">
-    <div class="triangle">
+  <div class="triangle">
   <div class="header">
     <img src="msbte.png" alt="MSBTE Logo" class="logo"/>
     <div class="heading">
@@ -82,6 +82,9 @@
             </select>
           </div>
           <div class="color-box">
+            <input type="text" name="data[Amount]" placeholder="Enter your amount" id="amount" class="inp" required />
+          </div>
+          <div class="color-box">
             <select name="data[Type]" id="type" class="inp" required>
               <option value="">--Type--</option>
               <option>Manage</option>
@@ -113,15 +116,8 @@
     </div>
   </div>
   <script>
-    const imgArray = [
-    "./m1.jpg",
-    "./m2.jpg",
-    "./m3.jpg",
-    "./m4.jpg",
-    "./m5.jpg",
-    "./m6.jpg",
-    "./m7.jpg"
-];
+    const imgArray = ["./m1.jpg","./m2.jpg","./m3.jpg","./m4.jpg","./m5.jpg","./m6.jpg","./m7.jpg"];
+
 imgArray.forEach(img => {
     const imgElement = new Image();
     imgElement.src = img;
