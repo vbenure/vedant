@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* 4-Color Gradient */
+            background: linear-gradient(135deg,
+                    #ff512f,
+                    #dd2476,
+                    #6a11cb,
+                    #2575fc);
+            background-size: 300% 300%;
+            animation: gradientMove 12s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            display: block;
+            margin: 12px 0;
+            padding: 14px;
+            text-decoration: none;
+            background: white;
+            color: #2575fc;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e3e3e3;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="fs" method="post">
+        <div class="container">
+            <a class="btn" href="#">Admin Login</a>
+            <a class="btn" href="#">Customer Login</a>
+        </div>
+    </form>
+</body>
+
+</html>
