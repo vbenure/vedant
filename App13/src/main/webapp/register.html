@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(270deg, #ff6b6b, #f06595, #845ef7, #339af0, #38d9a9);
+      background-size: 1000% 1000%;
+      animation: gradientShift 12s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+      animation: floatUp 1.2s ease;
+    }
+
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    input[type="text"],input[type="password"],input[type="mail"],input[type="tel"] {
+      width: 92%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      outline: 1px solid black;
+      background-color: transparent;
+      
+    }
+
+    input[type="submit"] {
+      margin-top: 18px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #4c6ef5;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: #364fc7;
+    }
+
+    a {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    input::placeholder{
+        color: black;
+    }
+  </style>
+</head>
+
+<body>
+    <form action="fs" method="post">
+        UserName <input type="text" name="uname" placeholder="Enter Username"/><br><br>
+        Password <input type="password" name="pwd"placeholder="Enter Password"/><br><br>
+        FirstName <input type="text" name="ufname" placeholder="Enter First Name"/><br><br>
+        LastName <input type="text" name="ulname" placeholder="Enter Last Name"/><br><br>
+        Address <input type="text" name="uaddr" placeholder="Enter Your Address"/><br><br>
+        Mail_id <input type="mail" name="umail" placeholder="Enter Your Mail Id"/><br><br>
+        Mobile No.<input type="tel" name="uphone" placeholder="Enter phone no."/><br>
+        <input type="submit" value="Login"/><br>
+    <a href="#">New Customer</a>
+    </form>
+</body>
+</html>
